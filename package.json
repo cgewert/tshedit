@@ -1,0 +1,32 @@
+{
+  "name": "tshedit",
+  "version": "1.0.0",
+  "description": "A typescript html css hexeditor running inside electron",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tsc && npm run build:css",
+    "lint": "tslint --project .",
+    "build:css": "node-sass css -o css",
+    "start": "electron ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cgewert/tshedit.git"
+  },
+  "keywords": [
+    "hexeditor"
+  ],
+  "author": "Christian Gewert",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cgewert/tshedit/issues"
+  },
+  "homepage": "https://github.com/cgewert/tshedit#readme",
+  "devDependencies": {
+    "electron": "^7.1.3",
+    "node-sass": "^4.13.0",
+    "tslint": "^5.20.1",
+    "typescript": "^3.7.3"
+  }
+}
