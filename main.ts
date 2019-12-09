@@ -1,15 +1,10 @@
-import { app, BrowserWindow } from "electron";
+import { app } from "electron";
+import fs from "fs";
+import { Editor } from "./src/tshedit";
 
-function createWindow() {
-  const win = new BrowserWindow({
-    height: 600,
-    webPreferences: {
-      nodeIntegration: true,
-    },
-    width: 800,
-  });
-
-  win.loadFile("index.html");
-}
-
-app.on("ready", createWindow);
+app.on("ready", () => {
+  const tshedit = new Editor();
+  const root = fs.readFileSync("./index.html");
+  console.log(root);
+  tshedit.createWindow(720, 1280);
+});
