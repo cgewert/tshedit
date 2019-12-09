@@ -1,17 +1,15 @@
-import { app, BrowserWindow } from 'electron'
+import { app, BrowserWindow } from "electron";
 
-function createWindow () {
-  // Erstelle das Browser-Fenster.
-  let win = new BrowserWindow({
-    width: 800,
+function createWindow() {
+  const win = new BrowserWindow({
     height: 600,
     webPreferences: {
-      nodeIntegration: true
-    }
-  })
+      nodeIntegration: true,
+    },
+    width: 800,
+  });
 
-  // und lade die index.html der App.
-  win.loadFile('index.html')
+  win.loadFile("index.html");
 }
 
-app.on('ready', createWindow)
+app.on("ready", createWindow);
