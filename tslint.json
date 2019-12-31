@@ -23,7 +23,8 @@
             "arrow-parameter",
             "parameter",
             "member-variable-declaration"
-        ]
+        ],
+        "no-console": false
     },
     "rulesDirectory": []
 }
