@@ -23,8 +23,10 @@
     "url": "https://github.com/cgewert/tshedit/issues"
   },
   "homepage": "https://github.com/cgewert/tshedit#readme",
+  "dependencies": {
+    "electron": "7.1.7",
+  },
   "devDependencies": {
-    "electron": "^7.1.3",
     "node-sass": "^4.13.0",
     "tslint": "^5.20.1",
     "typescript": "^3.7.3"
