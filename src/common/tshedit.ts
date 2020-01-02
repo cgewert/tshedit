@@ -9,17 +9,39 @@ export class Editor {
             },
             width: w,
         });
-        applicationWindow.setMenu(
-            Menu.buildFromTemplate([
-                {
-                    label: "File",
-                    submenu: [{ role: "about" }, { role: "quit" }],
-                },
-            ])
-        );
+
+        this.initializeMenu(applicationWindow);
+
         // applicationWindow.loadFile("index.html");
         applicationWindow.loadFile("index.html").then((result: void): void => {
             applicationWindow.webContents.openDevTools({ mode: "right" });
         });
+    }
+
+    private initializeMenu(applicationWindow: BrowserWindow): void {
+        applicationWindow.setMenu(
+            Menu.buildFromTemplate([
+                {
+                    label: "File",
+                    submenu: [
+                        {
+                            accelerator: "CmdOrCtrl+O",
+                            // tslint:disable-next-line:typedef
+                            click: (item, focusedWindow, ev) => {
+                                console.log("CLICK: ", item, focusedWindow, ev);
+                            },
+                            id: "mnuItemOpen",
+                            label: "Open",
+                        },
+                        {
+                            type: "separator",
+                        },
+                        {
+                            role: "quit",
+                        },
+                    ],
+                },
+            ])
+        );
     }
 }
