@@ -1,5 +1,5 @@
-import { app } from "electron";
-import { Editor } from "./src/tshedit";
+import { app, dialog } from "electron";
+import { Editor } from "../common/tshedit";
 
 app.on("ready", () => {
     const tshedit = new Editor();
