@@ -1,1 +1,1 @@
-// const bla = require("./bla.js");
+const { ipcRenderer } = require("electron");

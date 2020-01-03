@@ -1,6 +1,9 @@
-import { BrowserWindow, Menu, MenuItem } from "electron";
+import { BrowserWindow, dialog, Menu, MenuItem } from "electron";
+import { MainService } from "../main/mainService";
 
 export class Editor {
+    constructor(private mainService: MainService) {}
+
     public createWindow(h: number, w: number): void {
         const applicationWindow = new BrowserWindow({
             height: h,
@@ -28,7 +31,14 @@ export class Editor {
                             accelerator: "CmdOrCtrl+O",
                             // tslint:disable-next-line:typedef
                             click: (item, focusedWindow, ev) => {
-                                console.log("CLICK: ", item, focusedWindow, ev);
+                                this.mainService.openFileDialog(applicationWindow).then(
+                                    (fileName: string): void => {
+                                        console.log("Selected File: ", fileName);
+                                    },
+                                    (err: string): void => {
+                                        console.error("File IO error: ", err);
+                                    }
+                                );
                             },
                             id: "mnuItemOpen",
                             label: "Open",

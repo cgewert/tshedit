@@ -3,8 +3,18 @@
     "version": "1.0.0",
     "description": "A typescript html css hexeditor running inside electron",
     "main": "./src/main/main.js",
+    "jest": {
+        "moduleFileExtensions": [
+            "ts",
+            "js"
+        ],
+        "transform": {
+            "\\.(ts)$": "ts-jest"
+        },
+        "testRegex": "/src/.*\\.spec\\.(ts|js)$"
+    },
     "scripts": {
-        "test": "echo \"Error: no test specified\" && exit 1",
+        "test": "jest",
         "prebuild": "npm run lint",
         "build": "tsc",
         "postbuild": "node-sass css -o css",
@@ -28,8 +38,12 @@
         "electron": "7.1.7"
     },
     "devDependencies": {
+        "@types/jest": "^24.0.25",
+        "jest": "24.9.0",
         "node-sass": "4.13.0",
         "prettier": "1.19.1",
+        "spectron": "9.0.0",
+        "ts-jest": "24.2.0",
         "tslint": "5.20.1",
         "typescript": "3.7.3"
     }
