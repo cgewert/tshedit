@@ -1,6 +1,8 @@
 import { BrowserWindow, dialog, Menu, MenuItem } from "electron";
 import { MainService } from "../main/mainService";
 
+import * as fs from "fs";
+
 export class Editor {
     constructor(private mainService: MainService) {}
 
@@ -34,6 +36,11 @@ export class Editor {
                                 this.mainService.openFileDialog(applicationWindow).then(
                                     (fileName: string): void => {
                                         console.log("Selected File: ", fileName);
+                                        const fileStream = new fs.ReadStream();
+                                        // tslint:disable-next-line:typedef
+                                        fileStream.on("data", chunk => {
+                                            console.log("Chunk: ", chunk);
+                                        });
                                     },
                                     (err: string): void => {
                                         console.error("File IO error: ", err);
