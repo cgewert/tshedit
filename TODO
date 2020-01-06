@@ -1,0 +1,6 @@
+
+Todo:
+  ✔ Implement CSS Grid Layout for editor.pug html template @done(20-01-06 22:28)
+  ☐ Style editor view
+  ☐ Create Byte to Hexadecimal Converter Class
+  ☐ Read File into memory and operate on memory before saving to file

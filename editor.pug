@@ -1,3 +1,2 @@
-div.row
-    each val, index in data
-        div.cell= val.toString(16)
+each val, index in data 
+    div(id=`cell_${index}`).cell= val.toString(16)
