@@ -11,7 +11,7 @@
         "transform": {
             "\\.(ts)$": "ts-jest"
         },
-        "testRegex": "/src/.*\\.spec\\.(ts|js)$"
+        "testRegex": "/src/.*\\.spec\\.(js)$"
     },
     "scripts": {
         "test": "jest",
@@ -35,7 +35,8 @@
     },
     "homepage": "https://github.com/cgewert/tshedit#readme",
     "dependencies": {
-        "electron": "7.1.7"
+        "electron": "7.1.7",
+        "pug": "^2.0.4"
     },
     "devDependencies": {
         "@types/jest": "^24.0.25",

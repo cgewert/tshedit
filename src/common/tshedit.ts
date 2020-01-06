@@ -1,4 +1,4 @@
-import { BrowserWindow, dialog, Menu, MenuItem } from "electron";
+import { BrowserWindow, Menu } from "electron";
 import { MainService } from "../main/mainService";
 
 import * as fs from "fs";
@@ -36,10 +36,12 @@ export class Editor {
                                 this.mainService.openFileDialog(applicationWindow).then(
                                     (fileName: string): void => {
                                         console.log("Selected File: ", fileName);
-                                        const fileStream = new fs.ReadStream();
+                                        const fileStream = fs.createReadStream(fileName);
                                         // tslint:disable-next-line:typedef
                                         fileStream.on("data", chunk => {
-                                            console.log("Chunk: ", chunk);
+                                            applicationWindow.webContents.send("data", {
+                                                data: chunk,
+                                            });
                                         });
                                     },
                                     (err: string): void => {
