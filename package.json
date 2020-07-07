@@ -35,7 +35,7 @@
     },
     "homepage": "https://github.com/cgewert/tshedit#readme",
     "dependencies": {
-        "electron": "7.1.7",
+        "electron": "7.2.4",
         "pug": "^2.0.4"
     },
     "devDependencies": {
