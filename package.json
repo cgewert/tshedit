@@ -41,7 +41,7 @@
     "devDependencies": {
         "@types/jest": "^24.0.25",
         "jest": "24.9.0",
-        "node-sass": "4.13.0",
+        "node-sass": "4.13.1",
         "prettier": "1.19.1",
         "spectron": "9.0.0",
         "ts-jest": "24.2.0",
