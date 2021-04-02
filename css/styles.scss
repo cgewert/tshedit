@@ -9,21 +9,27 @@ body {
     color: #ffffff;
     flex-direction: column;
     align-items: center;
+
     .content-wrapper {
         width: 100%;
         flex-direction: column;
+
         #content-center {
             display: grid;
             grid-template-columns: repeat(16, 50px);
             background-color: white;
             color: black;
+
             .cell {
+                padding: 5px;
                 box-sizing: border-box;
+                text-align: center;
             }
             .cell:hover {
                 border: crimson dashed 1px;
                 background-color: darkorange;
             }
+
         }
     }
 }
